@@ -1,0 +1,206 @@
+:root {
+    --main__background: #121725;
+    --main__green: #54E6Af;
+    --white: #FFFFFF;
+    --paragraph__text: #C2CBE5;
+    --input__fill: #2C344B;
+    --email__address: #C2CBE5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Chivo', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--main__background);
+    
+}
+
+section.psuedo__background {
+    z-index: -1;
+    position: absolute; 
+    mix-blend-mode: overlay;
+}
+
+.info__section {
+    padding: 62px 24px 0 24px;
+}
+
+/* LOGO SECTION */
+
+.logo__section__desktab {
+    display: none;
+}
+
+.logo__section__mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo__combined {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.logo__left {
+    background-image: url(../starter-code/assets/desktop/logo.svg);
+    height: 56px;
+    width: 56px;
+}
+
+.logo__right {   
+    height: 56px;
+    width: 56px;
+    display: flex;
+}
+h1 {
+    align-self: center;
+    color: var(--white);
+    font-size: 2.3rem;
+}
+
+/*MAIN SECTION*/
+
+section h2 {
+    text-transform: uppercase;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: 0px;
+    text-align: center;
+    font-family: Chivo;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--main__green);
+    margin-top: 57px;
+    
+}
+
+section h2 span {
+    color: var(--white);
+}
+
+section p {
+    font-family: Chivo;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: center;  
+    color: var(--paragraph__text);
+    margin-top: 1rem;            
+}
+
+/* PLATFORM LOGOS */
+
+.platforms__section__mobile {
+    display: flex;
+    justify-content: space-evenly;
+    height: 17px;
+    gap: 1rem;
+    margin-top: 33px;
+}
+
+.platforms__section__desktab {
+    display: none;
+}
+
+.platform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%
+}
+
+/*INPUT SECTION*/
+
+form.input__section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+    gap: 1rem;
+}
+
+input {
+    line-height: 28px;
+    padding: 9px 0;
+    border-radius: 2rem;
+    border: none;
+    background-color: var(--input__fill);
+}
+
+input::placeholder {
+    color: var(--email__address);
+    font-family: Chivo;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    padding: 9px 0 9px 32px;
+}
+
+button {
+    line-height: 28px;
+    padding: 9px 0;
+    border-radius: 2rem;
+    border: none;
+    background-color: var(--main__green);
+    font-family: Chivo;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+/*DOTS*/
+
+.dots__container {
+    display: none;
+}
+
+
+@media (min-width: 413px ) {
+
+    /*LOGO*/
+
+    .logo__section__desktab {
+        display: block;
+        position: absolute;
+    }
+
+    .logo__section__mobile {
+        display: none;
+    }
+
+    /*PLATFORMS SECTION*/
+
+    .platforms__section__desktab {
+        display: flex;
+        justify-content: space-evenly;
+        height: 17px;
+        gap: 1rem;
+        margin-top: 33px;
+    }
+
+    .platforms__section__mobile {
+        display: none;
+    }
+
+    /*DOTS*/
+
+    .dots__container {
+        display: block;
+    }
+
+
+
+
+}
