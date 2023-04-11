@@ -16,15 +16,24 @@
 body {
     font-family: 'Chivo', sans-serif;
     min-height: 100vh;
-    position: relative;
+    min-width: 100%;
+    /* position: relative; */
     background-color: var(--main__background);
     
 }
 
-section.psuedo__background {
+section.psuedo__background__mobile {
     z-index: -1;
     position: absolute; 
     mix-blend-mode: overlay;
+}
+
+section.psuedo__background__tab {
+    display: none;
+}
+
+section.psuedo__background__desk {
+    display: none;
 }
 
 .info__section {
@@ -69,17 +78,12 @@ h1 {
 
 section h2 {
     text-transform: uppercase;
-    font-size: 27px;
-    font-weight: 400;
-    line-height: 38px;
-    letter-spacing: 0px;
-    text-align: center;
-    font-family: Chivo;
     font-size: 26px;
     font-weight: 400;
+    line-height: 38px;
+    text-align: center;
     color: var(--main__green);
-    margin-top: 57px;
-    
+    margin-top: 57px;  
 }
 
 section h2 span {
@@ -130,12 +134,18 @@ form.input__section {
     gap: 1rem;
 }
 
+input[type="text"] {
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
 input {
     line-height: 28px;
     padding: 9px 0;
     border-radius: 2rem;
     border: none;
     background-color: var(--input__fill);
+    color: white;
 }
 
 input::placeholder {
@@ -160,6 +170,11 @@ button {
     line-height: 28px;
 }
 
+button:hover {
+    background: hsla(157, 100%, 85%, 1);
+    cursor: pointer;
+}
+
 /*DOTS*/
 
 .dots__container {
@@ -169,15 +184,89 @@ button {
 
 @media (min-width: 413px ) {
 
+    body {
+        position: absolute;
+    }
+
+    section.psuedo__background__mobile {
+        display: none;
+    }
+
+    section.psuedo__background__tab {
+        display: flex;
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        
+    }
+
     /*LOGO*/
 
     .logo__section__desktab {
         display: block;
         position: absolute;
+        margin: 0;
+        padding: 0;
     }
 
     .logo__section__mobile {
         display: none;
+    }
+
+    .logo__combined {
+        margin: 50px 0 0 39px;
+    }
+
+    /*MAIN SECTION*/
+
+    .info__section {
+        background-color: var(--main__background);
+        width: 85%;
+        margin-left: 39px;
+        margin-top: 258px;
+        padding: 62px 24px 28px 24px;
+    }
+
+    section h2 {
+        text-transform: uppercase;
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 56px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: var(--main__green);
+        /* margin-top: 56px;   */
+    }
+
+    section h2 span {
+        color: var(--white);
+    }
+
+    section p {
+        font-size: 18px;
+        line-height: 28px;
+        text-align: left; 
+        margin-top: 31px;       
+    }
+
+    /*INPUT SECTION*/
+
+    form.input__section {
+        display: flex;
+        flex-direction: row;
+        margin-top: 48px;
+        gap: 0;
+        margin-top: 40px;
+    }
+
+    input {
+        width: 427px;
+        
+    }
+
+    button {
+        padding: 9px 27px;
+        margin-left: -162px;
     }
 
     /*PLATFORMS SECTION*/
@@ -198,9 +287,43 @@ button {
 
     .dots__container {
         display: block;
+        margin-left: 30px;
+        position: absolute;
+        bottom: 19px;
+    }
+}
+
+@media (min-width: 900px) {
+    section.psuedo__background__tab {
+        display: none;
+    }
+
+    section.psuedo__background__desk {
+        display: flex;
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        margin-top: 130px;
+    }
+
+    .dots__container {
+        right: 0px;
+        bottom: 5rem;
+    }
+
+    .logo__combined {
+        margin: 102px 0 0 165px;
+    }
+
+    .info__section {
+        background-color: var(--main__background);
+        width: 50%;
+        margin-left: 165px;
+        margin-top: 258px;
+        padding: 62px 24px 28px 0px;
     }
 
 
-
-
+    
+    
 }
